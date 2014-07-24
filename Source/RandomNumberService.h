@@ -41,6 +41,7 @@
 
 # include "M+MBaseRequestHandler.h"
 # include "M+MBaseService.h"
+# include "M+MRequests.h"
 
 # if defined(__APPLE__)
 #  pragma clang diagnostic push

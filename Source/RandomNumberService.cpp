@@ -1,12 +1,12 @@
 //--------------------------------------------------------------------------------------------------
 //
-//  File:       M+MRandomNumberService.cpp
+//  File:       RandomNumberService.cpp
 //
 //  Project:    M+M
 //
-//  Contains:   The class definition for the random number service.
+//  Contains:   The class definition for the random number service (GUI vesion), based on examples/RandomNumberService
 //
-//  Written by: Norman Jaffe
+//  Written by: Norman Jaffe, Johnty Wang
 //
 //  Copyright:  (c) 2014 by HPlus Technologies Ltd. and Simon Fraser University.
 //
@@ -32,13 +32,11 @@
 //              ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 //              DAMAGE.
 //
-//  Created:    2014-02-06
+//  Created:    2014-07-24
 //
 //--------------------------------------------------------------------------------------------------
 
 #include "RandomNumberService.h"
-#include "M+MRandomNumberRequests.h"
-
 //#include "ODEnableLogging.h"
 #include "ODLogging.h"
 

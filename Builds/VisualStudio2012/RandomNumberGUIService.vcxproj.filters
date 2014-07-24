@@ -294,6 +294,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\RandomNumberService.cpp">
+      <Filter>RandomNumberGUIService\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\RandomNumberServiceThread.cpp">
       <Filter>RandomNumberGUIService\Source</Filter>
     </ClCompile>
@@ -1422,11 +1425,11 @@
     <ClCompile Include="..\..\JuceLibraryCode\modules\juce_video\juce_video.cpp">
       <Filter>Juce Library Code</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\RandomNumberService.cpp">
-      <Filter>RandomNumberGUIService\Source</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\RandomNumberService.h">
+      <Filter>RandomNumberGUIService\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\RandomNumberServiceThread.h">
       <Filter>RandomNumberGUIService\Source</Filter>
     </ClInclude>
@@ -2749,9 +2752,6 @@
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>Juce Library Code</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\RandomNumberService.h">
-      <Filter>RandomNumberGUIService\Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

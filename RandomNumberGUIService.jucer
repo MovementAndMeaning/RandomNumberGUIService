@@ -5,18 +5,14 @@
               includeBinaryInAppConfig="1" jucerVersion="3.1.0">
   <MAINGROUP id="hwCiAa" name="RandomNumberGUIService">
     <GROUP id="{A33DA0CB-BC1C-8239-6A77-DB9524251D29}" name="Source">
+      <FILE id="BF5Lmg" name="RandomNumberService.cpp" compile="1" resource="0"
+            file="Source/RandomNumberService.cpp"/>
+      <FILE id="QzhuCW" name="RandomNumberService.h" compile="0" resource="0"
+            file="Source/RandomNumberService.h"/>
       <FILE id="wf5KBy" name="RandomNumberServiceThread.cpp" compile="1"
             resource="0" file="Source/RandomNumberServiceThread.cpp"/>
       <FILE id="FUp9rK" name="RandomNumberServiceThread.h" compile="0" resource="0"
             file="Source/RandomNumberServiceThread.h"/>
-      <FILE id="O4UHHQ" name="M+MRandomNumberService.cpp" compile="1" resource="0"
-            file="../MPlusM/examples/RandomNumberService/M+MRandomNumberService.cpp"/>
-      <FILE id="OlFkJ1" name="M+MRandomNumberService.h" compile="0" resource="0"
-            file="../MPlusM/examples/RandomNumberService/M+MRandomNumberService.h"/>
-      <FILE id="Ow06xc" name="M+MRandomRequestHandler.cpp" compile="1" resource="0"
-            file="../MPlusM/examples/RandomNumberService/M+MRandomRequestHandler.cpp"/>
-      <FILE id="iBorSc" name="M+MRandomRequestHandler.h" compile="0" resource="0"
-            file="../MPlusM/examples/RandomNumberService/M+MRandomRequestHandler.h"/>
       <FILE id="uFfWhO" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <FILE id="NfKURk" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
@@ -28,12 +24,12 @@
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
                        isDebug="1" optimisation="1" targetName="RandomNumberGUIService"
-                       headerPath="$(ACE_ROOT)&#10;$(YARP_DIR)\generated_include&#10;$(YARP_DIR)\src\libYARP_OS\include&#10;$(MPlusM_ROOT)\Common&#10;$(MPlusM_ROOT)\Logging&#10;$(MPlusM_ROOT)\examples\RandomNumberService&#10;$(MPlusM_ROOT)\examples\RandomNumberCommon"
+                       headerPath="$(ACE_ROOT)&#10;$(YARP_DIR)\generated_include&#10;$(YARP_DIR)\src\libYARP_OS\include&#10;$(MPlusM_ROOT)\Common&#10;$(MPlusM_ROOT)\Logging"
                        libraryPath="$(ACE_ROOT)\lib&#10;$(YARP_DIR)\lib\Debug&#10;$(MPlusM_ROOT)\Common\Debug&#10;$(MPlusM_ROOT)\Logging\Debug"
                        defines="" useRuntimeLibDLL="1"/>
         <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
                        isDebug="0" optimisation="2" targetName="RandomNumberGUIService"
-                       headerPath="$(ACE_ROOT)&#10;$(YARP_DIR)\generated_include&#10;$(YARP_DIR)\src\libYARP_OS\include&#10;$(MPlusM_ROOT)\Common&#10;$(MPlusM_ROOT)\Logging&#10;$(MPlusM_ROOT)\examples\RandomNumberService&#10;$(MPlusM_ROOT)\examples\RandomNumberCommon"
+                       headerPath="$(ACE_ROOT)&#10;$(YARP_DIR)\generated_include&#10;$(YARP_DIR)\src\libYARP_OS\include&#10;$(MPlusM_ROOT)\Common&#10;$(MPlusM_ROOT)\Logging"
                        libraryPath="$(ACE_ROOT)\lib&#10;$(YARP_DIR)\lib\Release&#10;$(MPlusM_ROOT)\Common\Release&#10;$(MPlusM_ROOT)\Logging\Release"
                        defines="" useRuntimeLibDLL="1"/>
       </CONFIGURATIONS>
