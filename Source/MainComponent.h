@@ -59,7 +59,7 @@ private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 	float minVal;
 	float maxVal;
-	RandomNumberServiceThread* serviceThread;
+	ScopedPointer <RandomNumberServiceThread> serviceThread;
     //[/UserVariables]
 
     //==============================================================================
