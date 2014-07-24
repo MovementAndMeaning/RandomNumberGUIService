@@ -18,13 +18,13 @@ RandomNumberServiceThread::RandomNumberServiceThread() : Thread("RandomNumberSer
 
 RandomNumberServiceThread::~RandomNumberServiceThread()
 {
-	stopThread(2000);
+	DBG("calling thread stop...\n");
+	int ok = stopThread(2000);
+	DBG("stopped:"+String(ok));
 }
 
 void RandomNumberServiceThread::run()
 {
-	yarp::os::Network yarp;
-
 	yarp::os::ConstString serviceEndpointName;
 	yarp::os::ConstString servicePortNumber;
 
@@ -39,9 +39,10 @@ void RandomNumberServiceThread::run()
 	if (stuff)
 		if (stuff->start())
 		{
-			yarp::os::ConstString channelName(stuff->getEndpoint().getName());
-			DBG("channelName = ", serviceEndpointName.c_str());
-			if (MplusM::Common::RegisterLocalService(channelName))
+ 			yarp::os::ConstString channelName(stuff->getEndpoint().getName());
+			
+			DBG("channelName = " + String(channelName.c_str()));
+			if (MplusM::Common::RegisterLocalService(channelName, NULL, NULL))
 			{
 				MplusM::StartRunning();
 				MplusM::Common::SetSignalHandlers(MplusM::SignalRunningStop);
@@ -50,12 +51,14 @@ void RandomNumberServiceThread::run()
 				{
 					yarp::os::Time::yield();
 				}
-				DBG("exit called; unregistering port...");
-				MplusM::Common::UnregisterLocalService(channelName);
-				stuff->stop();
+				DBG("exit called; unregistering port..."+String(channelName.c_str()));
+				MplusM::Common::UnregisterLocalService(channelName, NULL, NULL);
+				int ok = stuff->stop();
+				DBG("stuff stopped. ok=" + String(ok));
 			}
 		}
-
-	yarp.fini();
+	delete stuff;
+	stuff = NULL;
+	DBG("end of serviceThread...");
 }
 

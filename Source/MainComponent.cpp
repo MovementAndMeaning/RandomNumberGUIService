@@ -103,6 +103,9 @@ MainComponent::MainComponent ()
 
 
     //[Constructor] You can add your own custom stuff here..
+	yarp = new yarp::os::Network;
+
+	serviceThread = NULL;
     //[/Constructor]
 }
 
@@ -123,6 +126,9 @@ MainComponent::~MainComponent()
 
 
     //[Destructor]. You can add your own custom destruction code here..
+	if (serviceThread != NULL)
+		serviceThread->stopThread(2000);
+	yarp->fini();
     //[/Destructor]
 }
 
@@ -195,7 +201,9 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_textButtonStart] -- add your button handler code here..
 		//start the service!
 		textEditorStatus->setText("starting service...");
+
 		serviceThread = new RandomNumberServiceThread();
+		DBG("starting thread");
 		serviceThread->startThread();
 
         //[/UserButtonCode_textButtonStart]
@@ -205,11 +213,12 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_textButtonStop] -- add your button handler code here..
 		if (serviceThread != NULL)
 		{
-			juce::String output = "stopping service...";
+			juce::String output = "Sending thread stop signal";
 			textEditorStatus->setText(output);
-			serviceThread->stopThread(2000);
-			output+= "\nService stopped!";
-			textEditorStatus->setText(output);
+			serviceThread->signalThreadShouldExit();
+			//serviceThread = NULL;
+			//output+= "\nService stopped!";
+			//textEditorStatus->setText(output);
 		}
         //[/UserButtonCode_textButtonStop]
     }

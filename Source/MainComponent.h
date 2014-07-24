@@ -60,6 +60,7 @@ private:
 	float minVal;
 	float maxVal;
 	ScopedPointer <RandomNumberServiceThread> serviceThread;
+	ScopedPointer <yarp::os::Network> yarp;
     //[/UserVariables]
 
     //==============================================================================
