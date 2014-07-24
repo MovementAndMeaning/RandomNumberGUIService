@@ -22,6 +22,7 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include "JuceHeader.h"
+#include "RandomNumberServiceThread.h"
 //[/Headers]
 
 
@@ -58,6 +59,7 @@ private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 	float minVal;
 	float maxVal;
+	RandomNumberServiceThread* serviceThread;
     //[/UserVariables]
 
     //==============================================================================

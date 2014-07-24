@@ -40,7 +40,7 @@ void RandomNumberServiceThread::run()
 		if (stuff->start())
 		{
 			yarp::os::ConstString channelName(stuff->getEndpoint().getName());
-			DBG("channelName = ", channelName.c_str());
+			DBG("channelName = ", serviceEndpointName.c_str());
 			if (MplusM::Common::RegisterLocalService(channelName))
 			{
 				MplusM::StartRunning();

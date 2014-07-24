@@ -195,12 +195,22 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_textButtonStart] -- add your button handler code here..
 		//start the service!
 		textEditorStatus->setText("starting service...");
+		serviceThread = new RandomNumberServiceThread();
+		serviceThread->startThread();
 
         //[/UserButtonCode_textButtonStart]
     }
     else if (buttonThatWasClicked == textButtonStop)
     {
         //[UserButtonCode_textButtonStop] -- add your button handler code here..
+		if (serviceThread != NULL)
+		{
+			juce::String output = "stopping service...";
+			textEditorStatus->setText(output);
+			serviceThread->stopThread(2000);
+			output+= "\nService stopped!";
+			textEditorStatus->setText(output);
+		}
         //[/UserButtonCode_textButtonStop]
     }
 
