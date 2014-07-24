@@ -188,6 +188,8 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     }
 
     //[UsersliderValueChanged_Post]
+    if (serviceThread != NULL)
+        serviceThread->setMinMax(minVal, maxVal);
     //[/UsersliderValueChanged_Post]
 }
 

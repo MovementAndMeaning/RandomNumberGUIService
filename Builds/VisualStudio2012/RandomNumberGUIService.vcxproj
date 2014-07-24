@@ -135,9 +135,8 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\RandomNumberService.cpp" />
     <ClCompile Include="..\..\Source\RandomNumberServiceThread.cpp" />
-    <ClCompile Include="..\..\..\MPlusM\examples\RandomNumberService\M+MRandomNumberService.cpp" />
-    <ClCompile Include="..\..\..\MPlusM\examples\RandomNumberService\M+MRandomRequestHandler.cpp" />
     <ClCompile Include="..\..\Source\MainComponent.cpp" />
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\JuceLibraryCode\modules\juce_audio_basics\buffers\juce_AudioDataConverters.cpp">
@@ -1235,9 +1234,8 @@
     <ClCompile Include="..\..\JuceLibraryCode\modules\juce_video\juce_video.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\RandomNumberService.h" />
     <ClInclude Include="..\..\Source\RandomNumberServiceThread.h" />
-    <ClInclude Include="..\..\..\MPlusM\examples\RandomNumberService\M+MRandomNumberService.h" />
-    <ClInclude Include="..\..\..\MPlusM\examples\RandomNumberService\M+MRandomRequestHandler.h" />
     <ClInclude Include="..\..\Source\MainComponent.h" />
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\buffers\juce_AudioDataConverters.h" />
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\buffers\juce_AudioSampleBuffer.h" />

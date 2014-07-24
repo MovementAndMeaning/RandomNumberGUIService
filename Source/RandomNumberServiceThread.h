@@ -39,19 +39,24 @@
 #ifndef RANDOMNUMBERSERVICETHREAD_H_INCLUDED
 #define RANDOMNUMBERSERVICETHREAD_H_INCLUDED
 #include "M+MEndpoint.h"
-#include "M+MRandomNumberService.h"
+#include "RandomNumberService.h"
 #include "../JuceLibraryCode/JuceHeader.h"
+
+using namespace MplusM::Example;
 
 class RandomNumberServiceThread : public Thread, public ChangeBroadcaster {
 
 public:
 	RandomNumberServiceThread();
 	~RandomNumberServiceThread();
+
+	void setMinMax(float min, float max);
 	void run();
 
 	SpinLock lock;
 
 private:
+    RandomNumberService *stuff;
 	bool keepGoing;
 };
 

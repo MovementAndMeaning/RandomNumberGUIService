@@ -14,6 +14,7 @@ using namespace MplusM::Example;
 
 RandomNumberServiceThread::RandomNumberServiceThread() : Thread("RandomNumberServiceThread")
 {
+    stuff = NULL;
 }
 
 RandomNumberServiceThread::~RandomNumberServiceThread()
@@ -21,6 +22,12 @@ RandomNumberServiceThread::~RandomNumberServiceThread()
 	DBG("calling thread stop...\n");
 	int ok = stopThread(2000);
 	DBG("stopped:"+String(ok));
+}
+
+void RandomNumberServiceThread::setMinMax(float min, float max)
+{
+    if (stuff != NULL)
+        stuff->setMinMax(min, max);
 }
 
 void RandomNumberServiceThread::run()
@@ -34,7 +41,8 @@ void RandomNumberServiceThread::run()
 
 	keepGoing = true;
 
-	RandomNumberService *stuff = new RandomNumberService(argv, serviceEndpointName, servicePortNumber);
+    if (stuff == NULL)
+	    stuff = new RandomNumberService(argv, serviceEndpointName, servicePortNumber);
 
 	if (stuff)
 		if (stuff->start())
