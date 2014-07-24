@@ -57,10 +57,10 @@ public:
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
-	float minVal;
-	float maxVal;
-	ScopedPointer <RandomNumberServiceThread> serviceThread;
-	ScopedPointer <yarp::os::Network> yarp;
+    float minVal;
+    float maxVal;
+    ScopedPointer <RandomNumberServiceThread> serviceThread;
+    ScopedPointer <yarp::os::Network> yarp;
     //[/UserVariables]
 
     //==============================================================================

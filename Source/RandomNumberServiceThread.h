@@ -47,17 +47,17 @@ using namespace MplusM::Example;
 class RandomNumberServiceThread : public Thread, public ChangeBroadcaster {
 
 public:
-	RandomNumberServiceThread();
-	~RandomNumberServiceThread();
+    RandomNumberServiceThread();
+    ~RandomNumberServiceThread();
 
-	void setMinMax(float min, float max);
-	void run();
+    void setMinMax(float min, float max);
+    void run();
 
-	SpinLock lock;
+    SpinLock lock;
 
 private:
     RandomNumberService *stuff;
-	bool keepGoing;
+    bool keepGoing;
 };
 
 

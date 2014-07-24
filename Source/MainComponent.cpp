@@ -92,20 +92,20 @@ MainComponent::MainComponent ()
 
 
     //[UserPreSize]
-	textEditorStatus->setText("Set Min and Max Values, then hit Start!");
-	minVal = 0.0;
-	maxVal = 100.0;
-	sliderMin->setValue(minVal);
-	sliderMax->setValue(maxVal);
+    textEditorStatus->setText("Set Min and Max Values, then hit Start!");
+    minVal = 0.0;
+    maxVal = 100.0;
+    sliderMin->setValue(minVal);
+    sliderMax->setValue(maxVal);
     //[/UserPreSize]
 
     setSize (500, 600);
 
 
     //[Constructor] You can add your own custom stuff here..
-	yarp = new yarp::os::Network;
+    yarp = new yarp::os::Network;
 
-	serviceThread = NULL;
+    serviceThread = NULL;
     //[/Constructor]
 }
 
@@ -126,9 +126,9 @@ MainComponent::~MainComponent()
 
 
     //[Destructor]. You can add your own custom destruction code here..
-	if (serviceThread != NULL)
-		serviceThread->stopThread(2000);
-	yarp->fini();
+    if (serviceThread != NULL)
+        serviceThread->stopThread(2000);
+    yarp->fini();
     //[/Destructor]
 }
 
@@ -167,23 +167,23 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     if (sliderThatWasMoved == sliderMin)
     {
         //[UserSliderCode_sliderMin] -- add your slider handling code here..
-		minVal = sliderMin->getValue();
-		if (minVal>=maxVal) //adjust max val if necessary
-		{
-			maxVal = minVal;
-			sliderMax->setValue(maxVal);
-		}
+        minVal = sliderMin->getValue();
+        if (minVal>=maxVal) //adjust max val if necessary
+        {
+            maxVal = minVal;
+            sliderMax->setValue(maxVal);
+        }
         //[/UserSliderCode_sliderMin]
     }
     else if (sliderThatWasMoved == sliderMax)
     {
         //[UserSliderCode_sliderMax] -- add your slider handling code here..
-		maxVal = sliderMax->getValue();
-		if (minVal>=maxVal) //adjust min val if necessary
-		{
-			minVal = maxVal;
-			sliderMin->setValue(minVal);
-		}
+        maxVal = sliderMax->getValue();
+        if (minVal>=maxVal) //adjust min val if necessary
+        {
+            minVal = maxVal;
+            sliderMin->setValue(minVal);
+        }
         //[/UserSliderCode_sliderMax]
     }
 
@@ -201,27 +201,27 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     if (buttonThatWasClicked == textButtonStart)
     {
         //[UserButtonCode_textButtonStart] -- add your button handler code here..
-		//start the service!
-		textEditorStatus->setText("starting service...");
+        //start the service!
+        textEditorStatus->setText("starting service...");
 
-		serviceThread = new RandomNumberServiceThread();
-		DBG("starting thread");
-		serviceThread->startThread();
+        serviceThread = new RandomNumberServiceThread();
+        DBG("starting thread");
+        serviceThread->startThread();
 
         //[/UserButtonCode_textButtonStart]
     }
     else if (buttonThatWasClicked == textButtonStop)
     {
         //[UserButtonCode_textButtonStop] -- add your button handler code here..
-		if (serviceThread != NULL)
-		{
-			juce::String output = "Sending thread stop signal";
-			textEditorStatus->setText(output);
-			serviceThread->signalThreadShouldExit();
-			//serviceThread = NULL;
-			//output+= "\nService stopped!";
-			//textEditorStatus->setText(output);
-		}
+        if (serviceThread != NULL)
+        {
+            juce::String output = "Sending thread stop signal";
+            textEditorStatus->setText(output);
+            serviceThread->signalThreadShouldExit();
+            //serviceThread = NULL;
+            //output+= "\nService stopped!";
+            //textEditorStatus->setText(output);
+        }
         //[/UserButtonCode_textButtonStop]
     }
 
