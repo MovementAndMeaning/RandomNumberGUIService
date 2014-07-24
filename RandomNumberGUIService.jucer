@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="l9P3aj" name="RandomNumberGUIService" projectType="guiapp"
+              version="1.0.0" bundleIdentifier="com.yourcompany.RandomNumberGUIService"
+              includeBinaryInAppConfig="1" jucerVersion="3.1.0">
+  <MAINGROUP id="hwCiAa" name="RandomNumberGUIService">
+    <GROUP id="{A33DA0CB-BC1C-8239-6A77-DB9524251D29}" name="Source">
+      <FILE id="wf5KBy" name="RandomNumberServiceThread.cpp" compile="1"
+            resource="0" file="Source/RandomNumberServiceThread.cpp"/>
+      <FILE id="FUp9rK" name="RandomNumberServiceThread.h" compile="0" resource="0"
+            file="Source/RandomNumberServiceThread.h"/>
+      <FILE id="O4UHHQ" name="M+MRandomNumberService.cpp" compile="1" resource="0"
+            file="../MPlusM/examples/RandomNumberService/M+MRandomNumberService.cpp"/>
+      <FILE id="OlFkJ1" name="M+MRandomNumberService.h" compile="0" resource="0"
+            file="../MPlusM/examples/RandomNumberService/M+MRandomNumberService.h"/>
+      <FILE id="Ow06xc" name="M+MRandomRequestHandler.cpp" compile="1" resource="0"
+            file="../MPlusM/examples/RandomNumberService/M+MRandomRequestHandler.cpp"/>
+      <FILE id="iBorSc" name="M+MRandomRequestHandler.h" compile="0" resource="0"
+            file="../MPlusM/examples/RandomNumberService/M+MRandomRequestHandler.h"/>
+      <FILE id="uFfWhO" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="NfKURk" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="YblMuc" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2012 targetFolder="Builds/VisualStudio2012" externalLibraries="ACE.lib&#10;YARP_OS.lib&#10;YARP_init.lib&#10;odLogging.lib&#10;mpmCommon.lib">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="RandomNumberGUIService"
+                       headerPath="$(ACE_ROOT)&#10;$(YARP_DIR)\generated_include&#10;$(YARP_DIR)\src\libYARP_OS\include&#10;$(MPlusM_ROOT)\Common&#10;$(MPlusM_ROOT)\Logging&#10;$(MPlusM_ROOT)\examples\RandomNumberService&#10;$(MPlusM_ROOT)\examples\RandomNumberCommon"
+                       libraryPath="$(ACE_ROOT)\lib&#10;$(YARP_DIR)\lib\Debug&#10;$(MPlusM_ROOT)\Common\Debug&#10;$(MPlusM_ROOT)\Logging\Debug"
+                       defines="" useRuntimeLibDLL="1"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="2" targetName="RandomNumberGUIService"
+                       headerPath="$(ACE_ROOT)&#10;$(YARP_DIR)\generated_include&#10;$(YARP_DIR)\src\libYARP_OS\include&#10;$(MPlusM_ROOT)\Common&#10;$(MPlusM_ROOT)\Logging&#10;$(MPlusM_ROOT)\examples\RandomNumberService&#10;$(MPlusM_ROOT)\examples\RandomNumberCommon"
+                       libraryPath="$(ACE_ROOT)\lib&#10;$(YARP_DIR)\lib\Release&#10;$(MPlusM_ROOT)\Common\Release&#10;$(MPlusM_ROOT)\Logging\Release"
+                       defines="" useRuntimeLibDLL="1"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_video" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2012>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="1" optimisation="1" targetName="RandomNumberGUIService"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="0" optimisation="2" targetName="RandomNumberGUIService"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_video" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_core" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_cryptography" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_events" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_opengl" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_video" showAllCode="1" useLocalCopy="1"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>

@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2012
+Project("{66632172-400E-DB5C-C1CE-32DAE1BE3CEE}") = "RandomNumberGUIService", "RandomNumberGUIService.vcxproj", "{B7E2C3A4-5873-E459-127C-96F098785951}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7E2C3A4-5873-E459-127C-96F098785951}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B7E2C3A4-5873-E459-127C-96F098785951}.Debug|Win32.Build.0 = Debug|Win32
+		{B7E2C3A4-5873-E459-127C-96F098785951}.Release|Win32.ActiveCfg = Release|Win32
+		{B7E2C3A4-5873-E459-127C-96F098785951}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
