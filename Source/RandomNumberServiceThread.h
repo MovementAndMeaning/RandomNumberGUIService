@@ -54,10 +54,12 @@ public:
     void run();
 
     SpinLock lock;
+    int myState;
 
 private:
     RandomNumberService *stuff;
     bool keepGoing;
+    
 };
 
 

@@ -205,6 +205,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         textEditorStatus->setText("starting service...");
 
         serviceThread = new RandomNumberServiceThread();
+        serviceThread->addChangeListener(this);
         DBG("starting thread");
         serviceThread->startThread();
 
@@ -232,6 +233,20 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
+
+void  MainComponent::changeListenerCallback(ChangeBroadcaster* changeSource)
+{
+    if (serviceThread!= NULL) 
+    {
+
+        juce::String output;
+        if (serviceThread->myState == 1) 
+            output = "Service Thread running";
+        else
+            output = "Service Thread stopped";
+        textEditorStatus->setText(output);
+    }
+}
 //[/MiscUserCode]
 
 

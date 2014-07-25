@@ -42,6 +42,7 @@
 # include "M+MBaseRequestHandler.h"
 # include "M+MBaseService.h"
 # include "M+MRequests.h"
+#include "../JuceLibraryCode/JuceHeader.h"
 
 # if defined(__APPLE__)
 #  pragma clang diagnostic push
@@ -72,7 +73,7 @@ namespace MplusM
         class RandomRequestHandler;
         
         /*! @brief The random number service. */
-        class RandomNumberService : public Common::BaseService
+        class RandomNumberService : public Common::BaseService, public ChangeBroadcaster
         {
         public:
             

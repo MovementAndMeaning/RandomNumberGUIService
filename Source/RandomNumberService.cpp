@@ -104,7 +104,9 @@ void RandomNumberService::attachRequestHandlers(void)
         _randomHandler = new RandomRequestHandler;
         if (_randomHandler)
         {
+            //_randomHandler->addChangeListener(this);
             registerRequestHandler(_randomHandler);
+            
         }
         else
         {
@@ -321,5 +323,6 @@ bool RandomRequestHandler::processRequest(const yarp::os::ConstString & request,
         throw;
     }
     OD_LOG_OBJEXIT_B(result); //####
+
     return result;
 } // RandomRequestHandler::processRequest

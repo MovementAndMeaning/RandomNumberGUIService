@@ -37,7 +37,8 @@
 */
 class MainComponent  : public Component,
                        public SliderListener,
-                       public ButtonListener
+                       public ButtonListener,
+                       public ChangeListener
 {
 public:
     //==============================================================================
@@ -46,6 +47,7 @@ public:
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
+    void changeListenerCallback(ChangeBroadcaster* changeSource);
     //[/UserMethods]
 
     void paint (Graphics& g);

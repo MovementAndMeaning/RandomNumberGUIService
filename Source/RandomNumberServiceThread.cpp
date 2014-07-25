@@ -60,6 +60,7 @@ void RandomNumberServiceThread::setMinMax(float min, float max)
 
 void RandomNumberServiceThread::run()
 {
+    myState = 0;
     yarp::os::ConstString serviceEndpointName;
     yarp::os::ConstString servicePortNumber;
 
@@ -83,6 +84,8 @@ void RandomNumberServiceThread::run()
                 MplusM::StartRunning();
                 MplusM::Common::SetSignalHandlers(MplusM::SignalRunningStop);
                 stuff->startPinger();
+                myState = 1;
+                sendChangeMessage();
                 for ( ; MplusM::IsRunning() && stuff && !threadShouldExit(); )
                 {
                    yarp::os::Time::yield();
@@ -96,5 +99,7 @@ void RandomNumberServiceThread::run()
     delete stuff;
     stuff = NULL;
     DBG("end of serviceThread...");
+    myState = 0;
+    sendChangeMessage();
 }
 
