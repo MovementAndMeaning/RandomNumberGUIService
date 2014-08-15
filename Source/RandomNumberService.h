@@ -39,9 +39,9 @@
 #if (! defined(RandomNumberService_H_))
 # define RandomNumberService_H_  /* Header guard */
 
-# include "M+MBaseRequestHandler.h"
-# include "M+MBaseService.h"
-# include "M+MRequests.h"
+# include "mpm/M+MBaseRequestHandler.h"
+# include "mpm/M+MBaseService.h"
+# include "mpm/M+MRequests.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 
 # if defined(__APPLE__)

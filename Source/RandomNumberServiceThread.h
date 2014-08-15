@@ -38,7 +38,7 @@
 
 #ifndef RANDOMNUMBERSERVICETHREAD_H_INCLUDED
 #define RANDOMNUMBERSERVICETHREAD_H_INCLUDED
-#include "M+MEndpoint.h"
+#include "mpm/M+MEndpoint.h"
 #include "RandomNumberService.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 

@@ -38,7 +38,7 @@
 
 #include "RandomNumberService.h"
 //#include "ODEnableLogging.h"
-#include "ODLogging.h"
+#include "odl/ODLogging.h"
 
 #if defined(__APPLE__)
 # pragma clang diagnostic push
